@@ -1,24 +1,32 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 void main() {
-    public class Main {
-        public static void main(String[] args) {
-            // Create a user
-            Username user = new Username(System.in);
+    Scanner scanner = new Scanner(System.in);
+    Login auth = new Login();
 
-            // Create login system
-            Login login = new Login();
+    // --- Registration ---
+    System.out.println("--- REGISTRATION ---");
+    System.out.println(" Enter your First Name: ");
+    String fName = scanner.nextLine();
+    System.out.println(" Enter your Last Name: ");
+    String lName = scanner.nextLine();
+    System.out.println(" Enter your Username: ");
+    String user = scanner.nextLine();
+    System.out.println(" Enter your Password: ");
+    String pass = scanner.nextLine();
+    System.out.println(" Enter your Cell Phone Number (+27....): ");
+    String cell = scanner.nextLine();
 
-            // Register user
-            System.out.println(login.registerUser(user));
+    String regMessage = auth.registerUser(user, pass, cell, fName, lName);
+    System.out.println(regMessage);
 
-            // Attempt login with correct details
-            System.out.println(login.returnLoginStatus("kyl_1", "Ch&&sec@ke99!"));
+    // --- Login (Only if registration was successful) ---
+    if (regMessage.contains("successfully captured")) {
+        System.out.println("\n--- Login ---");
+        System.out.println("Username: ");
+        String loginUser = scanner.next();
+        System.out.println("Password: ");
+        String loginPass = scanner.next();
 
-            // Attempt login with incorrect details
-            System.out.println(login.returnLoginStatus("wrong", "password"));
-        }
+        boolean success = auth.loginUser(loginUser, loginPass);
+        System.out.println(auth.returnLoginStatus(success));
     }
-
 }
-
