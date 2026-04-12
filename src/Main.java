@@ -12,7 +12,7 @@ void main() {
     String user = scanner.nextLine();
     System.out.println(" Enter your Password: ");
     String pass = scanner.nextLine();
-    System.out.println(" Enter your Cell Phone Number (+27....): ");
+    System.out.println(" Enter your Phone Number (+27....): ");
     String cell = scanner.nextLine();
 
     String regMessage = auth.registerUser(user, pass, cell, fName, lName);
@@ -22,9 +22,9 @@ void main() {
     if (regMessage.contains("successfully captured")) {
         System.out.println("\n--- Login ---");
         System.out.println("Username: ");
-        String loginUser = scanner.next();
+        String loginUser = scanner.nextLine();
         System.out.println("Password: ");
-        String loginPass = scanner.next();
+        String loginPass = scanner.nextLine();
 
         boolean success = auth.loginUser(loginUser, loginPass);
         System.out.println(auth.returnLoginStatus(success));
