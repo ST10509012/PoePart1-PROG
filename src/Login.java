@@ -5,7 +5,7 @@ public class Login {
     private String password;
     private String firstName;
     private String lastName;
-    private String cellphoneNumber;
+    private String phoneNumber;
 
 
     // Validation for Username
