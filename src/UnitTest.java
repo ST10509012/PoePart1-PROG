@@ -1,7 +1,7 @@
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-public class LoginTest {
+public class UnitTest {
     Login app = new Login();
 
     @Test
@@ -34,7 +34,7 @@ public class LoginTest {
     @Test
     public void testLoginLogic() {
         // Register a valid user
-        app.registerUser("kyl_1", "Ch&&sec@ke99!", "+27838968976", "Kylie", "Smith");
+        app.registerUser("kyl_1", "Ch&&sec@ke99!", "+27838968976", "John", "Doe");
 
         // Login Successful (True)
         assertTrue(app.loginUser("kyl_1", "Ch&&sec@ke99!"));
@@ -45,11 +45,11 @@ public class LoginTest {
 
     @Test
     public void testReturnLoginStatusMessages() {
-        app.registerUser("kyl_1", "Ch&&sec@ke99!", "+27838968976", "Kylie", "Smith");
+        app.registerUser("kyl_1", "Ch&&sec@ke99!", "+27838968976", "John", "Doe");
 
         // Successful message check
         String successMsg = app.returnLoginStatus(true);
-        assertEquals("Welcome Kylie ,Smith it is great to see you again.", successMsg);
+        assertEquals("Welcome John ,Doe it is great to see you again.", successMsg);
 
         // Failed message check
         String failMsg = app.returnLoginStatus(false);
