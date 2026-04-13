@@ -8,14 +8,14 @@ void main() {
     String fName = scanner.nextLine();
     System.out.println(" Enter your Last Name: ");
     String lName = scanner.nextLine();
-    System.out.println(" Enter your Username: ");
-    String user = scanner.nextLine();
-    System.out.println(" Enter your Password: ");
-    String pass = scanner.nextLine();
-    System.out.println(" Enter your Phone Number (+27....): ");
+    System.out.println(" Enter your Username" + "(ensure that the password contains at least eight characters, a capital letter, a number, and a spec):");
+    String username = scanner.nextLine();
+    System.out.println(" Enter your Password" + "(ensure that your username contains an underscore and is no more than five characters in length):");
+    String password = scanner.nextLine();
+    System.out.println(" Enter your Cell Phone Number" + "(ensure that your number starts [+27] ");
     String cell = scanner.nextLine();
 
-    String regMessage = auth.registerUser(user, pass, cell, fName, lName);
+    String regMessage = auth.registerUser(username, password, cell, fName, lName);
     System.out.println(regMessage);
 
     // --- Login (Only if registration was successful) ---
