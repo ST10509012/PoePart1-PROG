@@ -15,7 +15,7 @@ public class Login {
 
     // Validation for Password Complexity
     public boolean checkPasswordComplexity(String password) {
-        boolean hasCap = !password.equals(password.toLowerCase());
+        boolean hasCap = password.equals(password.toLowerCase());
         boolean hasNum = password.matches(".*\\d.*");
         boolean hasSpec = password.matches(".*[!@#$%^&*(),.?\":{}|<>].*");
         return password.length() >= 8 && hasCap && hasNum && hasSpec;
