@@ -1,8 +1,9 @@
+import java.util.regex.Pattern;
+
 /**
  * Login Class
  * Handles registration and login logic for users.
  */
-import java.util.regex.Pattern;
 
 public class Login {
     private String username;
